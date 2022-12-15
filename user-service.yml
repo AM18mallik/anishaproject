@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service #What kind of object you want to create
+metadata: #service name,Data that helps uniquely identify the object
+  name: userms
+spec: #What state you desire for the object
+  selector:
+    app: userms
+  ports:
+    - port: 8888  #port at which service is internally available
+      targetPort: 8888 #port of container
+      
+      name: userms
+  type: LoadBalancer
